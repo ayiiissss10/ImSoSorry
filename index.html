@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aesthetic Love Letter</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+
+<style>
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #ffd1dc, #ffe4e1);
+  font-family: 'Poppins', sans-serif;
+  overflow: hidden;
+}
+
+.container {
+  position: relative;
+  width: 360px;
+  height: 640px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.text {
+  position: absolute;
+  top: 25%;
+  font-size: 18px;
+  color: #7a7a7a;
+  opacity: 0.8;
+}
+
+.heart {
+  font-size: 44px;
+  cursor: pointer;
+  animation: pulse 1.2s infinite;
+  transition: transform 0.3s;
+  position: relative;
+  z-index: 10;
+}
+
+.heart:hover {
+  transform: scale(1.2);
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.15); }
+}
+
+.letter {
+  position: absolute;
+  width: 85%;
+  max-width: 340px;
+  background: rgba(255,255,255,0.95);
+  backdrop-filter: blur(12px);
+  padding: 26px;
+  border-radius: 18px;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.25);
+  opacity: 0;
+  transform: translateY(100px) scale(0.85);
+  transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+  line-height: 1.6;
+  font-size: 14.5px;
+}
+
+.letter.show {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.letter h2 {
+  margin-top: 0;
+  font-family: 'Playfair Display', serif;
+}
+
+.fadeOut {
+  animation: fadeOut 0.5s forwards;
+}
+
+@keyframes fadeOut {
+  to { opacity: 0; }
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+  <div class="text" id="hint">Click the heart!</div>
+  <div class="heart" id="heart" onclick="openLetter()">❤️</div>
+
+  <div class="letter" id="letter">
+    <h2>My Sweetheart,</h2>
+    <p>
+      Aku minta maaf, benar benar minta maaf setulus hati aku, aku ngaku aku salah, ga sepantasnya aku jadiin mantan aku perumpamaan di hubungan kita, aku salah sayang. Aku bener bener minta maaf.
+    </p>
+    <p>
+      Aku sayang banget sama kamu, aku cinta sama kamu. Cuma ada kamu di hati aku, kamu satu satunya ga ada yang lain, aku berani bersumpah ga ada orang lain selain kamu. 
+      Aku serius sama kamu sayang, perasaanku sebesar dan sedalam ini buat kamu, aku cuma mau kamu, bukan orang lain, kamu tujuan aku sayang. 
+      Kamu penting dan berharga buat aku lebih dari apapun sayang.
+    </p>
+    <p>
+      Aku sadar kesalahanku fatal kali ini, ga seharusnya aku mengungkit masa lalu dan ga seharusnya aku membandingkan hubungan aku sekarang dengan masa lalu aku, jujur sayang aku ga ada niatan sedikitpun untuk hal itu. 
+      Aku akuin cara aku salah. Aku minta maaf setulus hati aku, aku sayang banget sama kamu.
+    </p>
+    <p><strong>With Love</strong></p>
+  </div>
+</div>
+
+<script>
+function openLetter(){
+  document.getElementById('letter').classList.add('show');
+  document.getElementById('heart').classList.add('fadeOut');
+  document.getElementById('hint').classList.add('fadeOut');
+}
+</script>
+
+</body>
+</html>
